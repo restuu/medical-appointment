@@ -40,11 +40,15 @@ export default {
       locations: [
         {
           name: 'Kimia Farma',
-          url: 'https://www.google.com/maps/place/Kimia+Farma+Apotik/@-7.62351,111.5199933,17z/data=!3m1!4b1!4m5!3m4!1s0x2e79be57e94a6105:0x18abcd998e793463!8m2!3d-7.62351!4d111.522182'
+          url: 'https://goo.gl/maps/jzK3giazHCC2'
         },
         {
           name: 'Al-Hasanah',
-          url: 'https://www.google.com/maps/place/Mother+%26+Child+Hospital+Al+Hasanah/@-7.6192911,111.5299875,17z/data=!3m1!4b1!4m5!3m4!1s0x2e79befb7ecb7e9b:0xa3cda995e90b27de!8m2!3d-7.6192911!4d111.5321816'
+          url: 'https://goo.gl/maps/tdqFvnk8kVG2'
+        },
+        {
+          name: 'Rumah',
+          url: 'https://goo.gl/maps/Rqv3W6u3d572'
         }
       ]
     }

@@ -2,11 +2,13 @@
   <v-app>
     <v-navigation-drawer
       persistent
-      clipped
+      :clipped="true"
+      width="200"
       v-model="drawer"
-      enable-resize-watcher
+      disable-resize-watcher
       fixed
       app
+      class="hidden-md-and-up"
     >
       <v-list>
         <v-list-tile
@@ -25,10 +27,19 @@
     </v-navigation-drawer>
     <v-toolbar
       app
-      clipped-left
+      :clipped-left="true"
     >
-      <v-toolbar-side-icon @click.stop="drawer = !drawer"></v-toolbar-side-icon>
+      <v-toolbar-side-icon
+        @click.stop="drawer = !drawer"
+        class="hidden-md-and-up"
+      />
       <v-toolbar-title v-text="title"></v-toolbar-title>
+      <v-spacer/>
+      <v-toolbar-items class="hidden-sm-and-down">
+        <v-btn flat>
+          Login / Masuk
+        </v-btn>
+      </v-toolbar-items>
     </v-toolbar>
     <v-content>
       <router-view/>
@@ -46,10 +57,16 @@ export default {
   data () {
     return {
       drawer: false,
-      items: [{
-        icon: 'bubble_chart',
-        title: 'Inspire'
-      }],
+      items: [
+        {
+          icon: 'bubble_chart',
+          title: 'Inspire'
+        },
+        {
+          icon: '',
+          title: 'Login / Masuk'
+        }
+      ],
       title: 'Vuetify.js'
     }
   }
