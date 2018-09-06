@@ -15,12 +15,13 @@
           value="true"
           v-for="(item, i) in items"
           :key="i"
+          :to="{name: item.target}"
         >
           <v-list-tile-action>
-            <v-icon v-html="item.icon"></v-icon>
+            <v-icon v-html="item.icon"/>
           </v-list-tile-action>
           <v-list-tile-content>
-            <v-list-tile-title v-text="item.title"></v-list-tile-title>
+            <v-list-tile-title v-text="item.title"/>
           </v-list-tile-content>
         </v-list-tile>
       </v-list>
@@ -33,12 +34,23 @@
         @click.stop="drawer = !drawer"
         class="hidden-md-and-up"
       />
-      <v-toolbar-title v-text="title"></v-toolbar-title>
+      <v-toolbar-title
+        v-text="title"
+        @mouseover="titleHover = true"
+        @mouseout="titleHover = false"
+        @click="linkTo('home')"
+        :class="{ pointer: titleHover }"
+      />
       <v-spacer/>
       <v-toolbar-items class="hidden-sm-and-down">
-        <v-btn flat>
-          Login / Masuk
-        </v-btn>
+        <v-btn 
+          v-for="(item, i) in items"
+          :key="i"
+          flat
+          v-text="item.title"
+          append
+          @click="linkTo(item.target)"
+        />
       </v-toolbar-items>
     </v-toolbar>
     <v-content>
@@ -60,15 +72,30 @@ export default {
       items: [
         {
           icon: 'bubble_chart',
-          title: 'Inspire'
+          title: 'Praktek',
+          target: 'schedules'
         },
         {
           icon: '',
-          title: 'Login / Masuk'
+          title: 'Login / Masuk',
+          target: ''
         }
       ],
-      title: 'Vuetify.js'
+      title: 'Vuetify.js',
+      titleHover: false
+    }
+  },
+
+  methods: {
+    linkTo (target) {
+      this.$router.push({name: target})
     }
   }
 }
 </script>
+
+<style scoped>
+.pointer {
+  cursor: pointer;
+}
+</style>

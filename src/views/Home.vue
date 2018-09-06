@@ -3,7 +3,7 @@
     <v-slide-y-transition mode="out-in">
       <v-parallax
         src="https://parkersquaremedical.com/wp-content/uploads/2015/08/ThinkstockPhotos-126930170-e1440532560232.jpg"
-        height="1000"
+        height="600"
         alt="preview"
       >
         <v-layout
@@ -29,13 +29,13 @@
 </template>
 
 <script>
-import Location from '@/components/Location';
+import Location from '@/components/Location'
 
 export default {
   components: {
     Location
   },
-  data() {
+  data () {
     return {
       locations: [
         {
