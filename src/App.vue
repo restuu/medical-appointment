@@ -62,37 +62,33 @@
   </v-app>
 </template>
 
-<script>
+<script lang="ts">
+import { Vue, Component } from "vue-property-decorator";
 
-export default {
-  name: 'App',
-  data () {
-    return {
-      drawer: false,
-      items: [
-        {
-          icon: 'bubble_chart',
-          title: 'Praktek',
-          target: 'schedules'
-        },
-        {
-          icon: '',
-          title: 'Login / Masuk',
-          target: ''
-        }
-      ],
-      title: 'Vuetify.js',
-      titleHover: false
+@Component
+export default class App extends Vue {
+  drawer: boolean = false;
+  items = [
+    {
+      icon: "bubble_chart",
+      title: "Praktek",
+      target: "schedules"
+    },
+    {
+      icon: "",
+      title: "Login / Masuk",
+      target: ""
     }
-  },
+  ];
+  title = "Vuetify.js";
+  titleHover: boolean = false;
 
-  methods: {
-    linkTo (target) {
-      this.$router.push({name: target})
-    }
+  linkTo(target: string) {
+    this.$router.push({ name: target });
   }
 }
 </script>
+
 
 <style scoped>
 .pointer {

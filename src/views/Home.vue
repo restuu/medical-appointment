@@ -28,30 +28,34 @@
   </v-container>
 </template>
 
-<script>
-import Location from '@/components/Location'
+<script lang="ts">
+import { Component, Vue } from "vue-property-decorator";
+import Location from "@/components/Location.vue";
 
-export default {
+type LocationType = {
+  name: string;
+  url: string;
+};
+
+@Component({
   components: {
     Location
-  },
-  data () {
-    return {
-      locations: [
-        {
-          name: 'Kimia Farma',
-          url: 'https://goo.gl/maps/jzK3giazHCC2'
-        },
-        {
-          name: 'Al-Hasanah',
-          url: 'https://goo.gl/maps/tdqFvnk8kVG2'
-        },
-        {
-          name: 'Rumah',
-          url: 'https://goo.gl/maps/Rqv3W6u3d572'
-        }
-      ]
-    }
   }
+})
+export default class Home extends Vue {
+  locations: LocationType[] = [
+    {
+      name: "Kimia Farma",
+      url: "https://goo.gl/maps/jzK3giazHCC2"
+    },
+    {
+      name: "Al-Hasanah",
+      url: "https://goo.gl/maps/tdqFvnk8kVG2"
+    },
+    {
+      name: "Rumah",
+      url: "https://goo.gl/maps/Rqv3W6u3d572"
+    }
+  ];
 }
 </script>
