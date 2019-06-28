@@ -1,14 +1,7 @@
 <template>
   <div>
-    <a
-      :href="locationUrl"
-      :class="`headline ${color}--text`"
-      target="_blank"
-    >
-      <v-icon :color="color">
-        place
-      </v-icon>{{ locationName }}
-    </a>
+    <v-icon :color="color">place</v-icon>
+    <a :href="locationUrl" :class="`headline ${color}--text`" target="_blank">{{ locationName }}</a>
   </div>
 </template>
 

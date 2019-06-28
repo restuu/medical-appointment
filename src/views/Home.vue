@@ -32,9 +32,10 @@
 import { Component, Vue } from "vue-property-decorator";
 import Location from "@/components/Location.vue";
 
-type LocationType = {
+export type LocationType = {
   name: string;
   url: string;
+  address: string;
 };
 
 @Component({
@@ -46,15 +47,18 @@ export default class Home extends Vue {
   locations: LocationType[] = [
     {
       name: "Kimia Farma",
-      url: "https://goo.gl/maps/jzK3giazHCC2"
+      url: "https://goo.gl/maps/jzK3giazHCC2",
+      address: 'Jl. Jawa, Kartoharjo, Madiun, Kota Madiun, Jawa Timur 63116'
     },
     {
       name: "Al-Hasanah",
-      url: "https://goo.gl/maps/tdqFvnk8kVG2"
+      url: "https://goo.gl/maps/tdqFvnk8kVG2",
+      address: 'Jl. Sri Rejeki No.91B, Sukosari, Kartoharjo, Kota Madiun, Jawa Timur 63119'
     },
     {
       name: "Rumah",
-      url: "https://goo.gl/maps/Rqv3W6u3d572"
+      url: "https://goo.gl/maps/Rqv3W6u3d572",
+      address: 'Jl. Bolodewo'
     }
   ];
 }
